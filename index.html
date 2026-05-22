@@ -20,16 +20,26 @@
             <h2>Minha lista de tarefas</h2>
             <p>Organize suas tarefas do dia</p>
 
-            <div class="input-area">
-                <input 
-                    type="text" 
-                    id="taskInput" 
+            <form class="task-form" id="taskForm">
+                <label class="sr-only" for="taskInput">Nova tarefa</label>
+                <input
+                    type="text"
+                    id="taskInput"
                     placeholder="Digite uma nova tarefa"
+                    autocomplete="off"
                 >
-                <button id="addTaskBtn">Adicionar</button>
+                <button type="submit" id="addTaskBtn">Adicionar</button>
+            </form>
+
+            <div class="filter-area" aria-label="Filtros de tarefas">
+                <button type="button" class="filter-btn active" data-filter="todas">Todas</button>
+                <button type="button" class="filter-btn" data-filter="pendentes">Pendentes</button>
+                <button type="button" class="filter-btn" data-filter="concluidas">Concluídas</button>
             </div>
 
-            <ul id="taskList"></ul>
+            <ul id="taskList" class="task-list"></ul>
+
+            <p class="empty-message" id="emptyMessage">Nenhuma tarefa encontrada.</p>
         </section>
     </main>
 
